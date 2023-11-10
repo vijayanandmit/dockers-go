@@ -21,6 +21,7 @@ func main() {
 
 	cmd := exec.Command(command, args...)
 	output, err := cmd.Output()
+	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout
 
